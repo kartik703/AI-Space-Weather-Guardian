@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: space-weather-api
+    env: docker
+    plan: free
+    region: oregon
+    runtime: docker
+    dockerfilePath: ./Dockerfile.api
+    healthCheckPath: /
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+
+  - type: cron
+    name: space-weather-retrain
+    env: docker
+    plan: free
+    region: oregon
+    runtime: docker
+    dockerfilePath: ./Dockerfile.api
+    schedule: "0 2 * * *"   # run daily at 02:00 UTC
+    startCommand: "python -m app.retrain"
