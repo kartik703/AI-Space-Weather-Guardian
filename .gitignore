@@ -1,28 +1,12 @@
-# Python
-__pycache__/
+﻿__pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-*.so
-
-# Virtual envs
 venv/
-.env/
-*.egg-info/
 .venv/
-
-# OS
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log
-
-# Data cache
 data/*.csv
 !data/.gitkeep
-
-# Models (optional, if you don’t want to push them)
 models/*.pth
 models/*.pkl
 models/*.json
+
